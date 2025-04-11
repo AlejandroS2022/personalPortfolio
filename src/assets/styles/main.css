@@ -1,0 +1,356 @@
+@import "tailwindcss";
+@import "./variables.css";
+
+@layer components {
+  .main-app {
+    @apply 
+      bg-(image:--bg-hero)
+      bg-cover
+      bg-center
+      bg-no-repeat
+      bg-fixed
+      flex
+      flex-col
+      h-full
+      justify-center
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant dark {
+      @apply bg-(image:--bg-hero--dark);
+    }
+  }
+
+  .main-paddings {
+    @apply px-5 py-35 my-auto;
+    @variant sm {
+      @apply px-20 py-40;
+    }
+    @variant md {
+      @apply px-35 py-45;
+    }
+    @variant lg {
+      @apply px-50 py-50;
+    }
+    @variant xl {
+      @apply px-70 py-55;
+    }
+  }
+
+  .body-paddings {
+    @apply px-5 py-5 my-auto;
+    @variant sm {
+      @apply px-20;
+    }
+    @variant md {
+      @apply px-35;
+    }
+    @variant lg {
+      @apply px-50;
+    }
+    @variant xl {
+      @apply px-70;
+    }
+  }
+  
+  .highlight-text {
+    @apply text-highlight;
+    @variant dark {
+      @apply text-highlight--dark
+    }
+  }
+
+  .text-card {
+    @apply 
+      bg-slate-800/20
+      p-1
+      rounded-2xl
+      backdrop-blur-sm
+      border-b-2
+      animate-border-pulse
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant dark {
+      @apply animate-border-pulse--dark;
+    }
+    @variant hover {
+      @apply bg-slate-800/30;
+    }
+  }
+
+  .socials-button {
+    @apply
+      text-white
+      text-4xl
+      my-4
+
+      transition
+      duration-300
+      ease-in-out;
+    @variant hover {
+      @apply text-(--color-highlight);
+    }
+    @variant dark {
+      @variant hover {
+        @apply text-(--color-highlight--dark);
+      }
+    }
+  }
+
+  .button-main {
+    @apply
+      font-montserrat-alt!
+      text-gray-800!
+      border-highlight!
+      text-xs!
+      normal-case!
+      
+      transition!
+      duration-300
+      ease-in-out;
+    @variant hover {
+      @apply text-(--color-highlight)!;
+    }
+    @variant dark {
+      @apply text-main--dark! border-highlight--dark!;
+      @variant hover {
+        @apply text-(--color-highlight--dark)!;
+      }
+    }
+    @variant md {
+      @apply text-sm!;
+    }
+  }
+
+  .divider {
+    @apply h-[0.1rem] w-20 my-auto;
+    @variant md {
+      @apply w-25;
+    }
+  }
+
+  .divider__left {
+    @apply
+      bg-gradient-to-r
+      from-transparent to-highlight;
+    @variant dark {
+      @apply from-transparent to-highlight--dark;
+    }
+  }
+
+  .divider__right {
+    @apply
+      bg-gradient-to-r
+      from-highlight to-transparent;
+    @variant dark {
+      @apply from-highlight--dark to-transparent;
+    }
+  }
+
+  .divider-text {
+    @apply
+      font-montserrat-alt!
+      text-black!
+      text-xs!
+      bg-white!
+      border-2!
+      border-highlight!
+      cursor-default!
+      
+      transition
+      duration-300
+      ease-in-out;
+    @variant hover {
+      @apply text-(--color-highlight)!;
+    }
+    @variant dark {
+      @apply text-white! bg-black! border-highlight--dark!;
+      @variant hover {
+        @apply text-(--color-highlight--dark)!;
+      }
+    }
+  }
+  
+  .swiper-slide {
+    @apply bg-white flex! justify-center items-center h-fit! rounded-lg;
+    @variant dark {
+      @apply bg-gray-800;
+    }
+  }
+
+  .project-card {
+    @apply bg-main--dark pb-5!;
+    @variant dark {
+      @apply bg-gray-800;
+    }
+  }
+
+  .project-card__image {
+    @apply h-45 object-top;
+    @variant md {
+      @apply h-55;
+    }
+    @variant lg {
+      @apply h-65;
+    }
+  }
+
+  .project-card__title {
+    @apply font-montserrat-alt! text-lg! font-bold! text-gray-800;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-xl!;
+    }
+    @variant md {
+      @apply text-3xl!;
+    }
+    @variant lg {
+      @apply text-4xl!;
+    }
+    @variant xl {
+      @apply text-5xl!;
+    }
+  }
+
+  .project-card__body-text {
+    @apply font-montserrat-alt! text-sm! text-gray-800 whitespace-pre-line;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant md {
+      @apply text-base!;
+    }
+  }
+
+  .project-card__techstacks {
+    @apply font-montserrat-alt! text-xs! bg-gray-800! text-main--dark! mr-1 mb-1;
+    @variant dark {
+      @apply bg-main--dark! text-gray-800!;
+    }
+  }
+}
+
+@layer base {
+  h1 {
+    @apply font-viga text-3xl text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-4xl;
+    }
+    @variant md {
+      @apply text-6xl;
+    }
+    @variant lg {
+      @apply text-7xl;
+    }
+    @variant xl {
+      @apply text-8xl;
+    }
+  }
+  h2 {
+    @apply font-viga text-2xl text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-3xl;
+    }
+    @variant md {
+      @apply text-5xl;
+    }
+    @variant lg {
+      @apply text-6xl;
+    }
+    @variant xl {
+      @apply text-7xl;
+    }
+  }
+  h3 {
+    @apply font-montserrat-alt text-xl font-bold text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-2xl;
+    }
+    @variant md {
+      @apply text-4xl;
+    }
+    @variant lg {
+      @apply text-5xl;
+    }
+    @variant xl {
+      @apply text-6xl;
+    }
+  }
+  h4 {
+    @apply font-montserrat-alt text-lg font-bold text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-xl;
+    }
+    @variant md {
+      @apply text-3xl;
+    }
+    @variant lg {
+      @apply text-4xl;
+    }
+    @variant xl {
+      @apply text-5xl;
+    }
+  }
+  h5 {
+    @apply font-montserrat-alt text-base font-bold text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-lg;
+    }
+    @variant md {
+      @apply text-2xl;
+    }
+    @variant lg {
+      @apply text-3xl;
+    }
+    @variant xl {
+      @apply text-4xl;
+    }
+  }
+  h6 {
+    @apply font-montserrat-alt text-sm font-semibold text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant sm {
+      @apply text-base;
+    }
+    @variant md {
+      @apply text-xl;
+    }
+    @variant lg {
+      @apply text-2xl;
+    }
+    @variant xl {
+      @apply text-3xl;
+    }
+  }
+  p {
+    @apply font-montserrat-alt text-sm text-main;
+    @variant dark {
+      @apply text-main--dark;
+    }
+    @variant md {
+      @apply text-base;
+    }
+  }
+}

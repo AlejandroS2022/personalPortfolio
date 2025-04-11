@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "../variables.css";
+
+@layer components {
+  .sidebar-main {
+    @apply 
+      bg-[#29d4ff]/40
+      backdrop-blur-xs
+      hidden
+      flex-col
+      justify-center
+      items-center
+      my-auto
+      gap-3
+      py-4.5
+      px-1
+      rounded-tr-3xl
+      rounded-br-3xl;
+    @variant dark {
+      @apply bg-white/40;
+    }
+
+    @variant sm {
+      @apply gap-4 py-5.5;
+    }
+    @variant md {
+      @apply flex gap-5 py-6.5 px-1.5;
+    }
+    @variant lg {
+      @apply gap-6 py-7.5;
+    }
+    @variant xl {
+      @apply gap-7 py-8.5;
+    }
+  }
+
+  .sidebar-button {
+    @apply
+      text-white
+      p-2
+      rounded-full
+
+      transition
+      duration-300
+      ease-in-out;
+    @variant hover {
+      @apply bg-white/60 text-black;
+    }
+    @variant dark {
+      @apply text-black;
+      @variant hover {
+        @apply bg-(--color-highlight--dark)/60 text-white;
+      }
+    }
+  }
+}
