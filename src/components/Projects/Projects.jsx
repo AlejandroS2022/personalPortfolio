@@ -5,13 +5,13 @@ import ProjectsSliderMobile from "./ProjectsSlider/ProjectsSliderMobile";
 function Projects() {
   return (
     <>
-      <div className="body-paddings">
+      <div className="body-paddings" id="projects">
         <div className="flex flex-col">
           <h2 className="drop-shadow-h mx-auto">
             Projects
           </h2>
 
-          <LabeledDivider label="My Work" />
+          <LabeledDivider label="<MyWork>" />
         </div>
       </div>
 

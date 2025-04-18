@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaSquareUpwork } from "react-icons/fa6";
 function Hero() {
   return (
     <>
-      <div className="main-paddings">
+      <div className="main-paddings" id="home">
         <div className="text-card">
           <h6 className="drop-shadow-h mt-1">
             Hi there!
@@ -31,9 +31,9 @@ function Hero() {
             items-center
             mx-auto"
           >
-            <SocialsButton href="https://github.com/AlejandroS2022" icon={FaGithub} />
-            <SocialsButton href="https://www.linkedin.com/in/alejandro-suazo-46a47a180/" icon={FaLinkedin} />
-            <SocialsButton href="https://www.upwork.com/freelancers/~01882b201250bdc6f6" icon={FaSquareUpwork} />
+            <SocialsButton href="https://github.com/AlejandroS2022" Icon={FaGithub} />
+            <SocialsButton href="https://www.linkedin.com/in/alejandro-suazo-46a47a180/" Icon={FaLinkedin} />
+            <SocialsButton href="https://www.upwork.com/freelancers/~01882b201250bdc6f6" Icon={FaSquareUpwork} />
           </div>
         </div>
       </div>

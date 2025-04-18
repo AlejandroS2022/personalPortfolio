@@ -25,7 +25,7 @@ function MobileDrawer({
 
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton href="#home">
             <ListItemIcon>
               <HomeIcon className="drawer-icon" />
             </ListItemIcon>
@@ -34,7 +34,7 @@ function MobileDrawer({
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton href="#projects">
             <ListItemIcon>
               <WorkIcon className="drawer-icon" />
             </ListItemIcon>
@@ -43,7 +43,7 @@ function MobileDrawer({
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton href="#about">
             <ListItemIcon>
               <PersonIcon className="drawer-icon" />
             </ListItemIcon>
@@ -52,7 +52,7 @@ function MobileDrawer({
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton href="#contact">
             <ListItemIcon>
               <PhoneIcon className="drawer-icon" />
             </ListItemIcon>

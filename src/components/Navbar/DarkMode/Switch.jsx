@@ -3,7 +3,7 @@ import Switch from '@mui/material/Switch';
 
 import { FaSun, FaMoon } from 'react-icons/fa';
 
-const DarkModeSwitch = styled(Switch)(({ theme }) => ({
+const DarkModeSwitch = styled(Switch)(() => ({
   width: 64,
   height: 36,
   padding: 7,

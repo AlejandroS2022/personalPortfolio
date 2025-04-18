@@ -1,46 +1,59 @@
+import Button from '@mui/material/Button';
 import LabeledDivider from "../LabeledDivider/LabeledDivider";
+import SkillsCard from './SkillsCard/SkillsCard';
+
+import { FaFileArrowDown } from "react-icons/fa6";
+
+import { aboutMe } from "../../data/AboutMe";
 
 function AboutMe() {
   return (
     <>
-      <div className="body-paddings">
+      <div className="body-paddings" id="about">
         <div className="flex flex-col">
           <h2 className="drop-shadow-h mx-auto">
             About Me
           </h2>
 
-          <LabeledDivider label="My Skills" />
+          <div className="about-container-main">
+            <div className="about-card">
+              <div className="flex flex-col flex-1 mx-auto">
+                <p>
+                  {aboutMe.description}
+                </p>
 
-          <p className="drop-shadow-h mx-auto mt-8">
-            I have been coding for over 6 years, starting my journey in 2019. As a self-taught
-            person I initially learned HTML, CSS, Javascript and PHP while doing simple website projects.
-            As I progressed, I focused mainly on React and NodeJS, as well as other technologies
-            such as Laravel or Tailwind. Now I'm focusing on building scalable, responsive and high-quality
-            web applications using the latest technologies, ensuring efficient and well-structured solutions,
-            always striving to deliver projects that exceed expectations.
+                <Button
+                  variant="outlined"
+                  className="button-main my-3! max-w-50! self-center"
+                  startIcon={<FaFileArrowDown />}
+                  href={aboutMe.urlCV}
+                  target="_blank"
+                >
+                  Download CV
+                </Button>
+              </div>
 
-            I'm always open to expanding my knowledge, learning new technologies and practices at every opportunity
-            and adapting quickly to new challenges and tools.
-          </p>
+              <div className="about-card__image-container">
+                <img
+                  src={aboutMe.image}
+                  alt="Alejandro S."
+                  className="about-card__image"
+                  loading="lazy"
+                />
+              </div>
+            </div>
 
-          <h5 className="drop-shadow-h mx-auto mt-8">Skills</h5>
+            <LabeledDivider label="<MySkills>" />
 
-          <p className="drop-shadow-h mx-auto mt-8">
-            HTML, CSS, Bootstrap, Sass, Tailwind, Flowbite, Javascript, jQuery, Vite, React, Redux, Material UI,
-            NextJS, Swiper, Vue, Vuetify, Vuex
-          </p>
-
-          <p className="drop-shadow-h mx-auto mt-8">
-            PHP, Laravel, NodeJS, Express, Strapi, MySQL, PostgreSQL, MongoDB
-          </p>
-
-          <p className="drop-shadow-h mx-auto mt-8">
-            Git, Github, Gitlab, Bitbucket, Figma, Jira, Trello, Vercel, Postman
-          </p>
-
-          <p className="drop-shadow-h mx-auto mt-8">
-            Python, Django, OpenAI, Astro, React Native, Flutter, Expo, Firebase, AWS, Docker
-          </p>
+            <div className="flex flex-wrap gap-3 my-5">
+              {aboutMe.skills.map((skill, index) => (
+                skill.show &&
+                <div className="skills-card basis-xs flex-auto" key={index}>
+                  <SkillsCard skill={skill} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

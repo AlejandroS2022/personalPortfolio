@@ -13,7 +13,7 @@
       flex-col
       h-full
       justify-center
-      
+
       transition-all
       duration-300
       ease-in-out;
@@ -68,13 +68,13 @@
       rounded-2xl
       backdrop-blur-sm
       border-b-2
-      animate-border-pulse
+      animate-card
       
       transition-all
       duration-300
       ease-in-out;
     @variant dark {
-      @apply animate-border-pulse--dark;
+      @apply animate-card--dark;
     }
     @variant hover {
       @apply bg-slate-800/30;
@@ -86,16 +86,17 @@
       text-white
       text-4xl
       my-4
+      animate-enter-spring-delayed
 
       transition
       duration-300
       ease-in-out;
     @variant hover {
-      @apply text-(--color-highlight);
+      @apply text-highlight;
     }
     @variant dark {
       @variant hover {
-        @apply text-(--color-highlight--dark);
+        @apply text-highlight--dark;
       }
     }
   }
@@ -112,12 +113,12 @@
       duration-300
       ease-in-out;
     @variant hover {
-      @apply text-(--color-highlight)!;
+      @apply text-highlight!;
     }
     @variant dark {
       @apply text-main--dark! border-highlight--dark!;
       @variant hover {
-        @apply text-(--color-highlight--dark)!;
+        @apply text-highlight--dark!;
       }
     }
     @variant md {
@@ -125,8 +126,21 @@
     }
   }
 
+  .button-main__contact {
+    @apply font-semibold! bg-slate-800! text-slate-200!;
+    @variant hover {
+      @apply text-highlight!;
+    }
+    @variant dark {
+      @apply bg-slate-400! text-slate-800!;
+      @variant hover {
+        @apply text-highlight--dark!;
+      }
+    }
+  }
+
   .divider {
-    @apply h-[0.1rem] w-20 my-auto;
+    @apply h-[0.1rem] w-20 my-auto animate-compress;
     @variant md {
       @apply w-25;
     }
@@ -153,23 +167,24 @@
   .divider-text {
     @apply
       font-montserrat-alt!
-      text-black!
+      text-gray-800!
       text-xs!
+      font-medium
       bg-white!
       border-2!
-      border-highlight!
       cursor-default!
+      animate-border-pulse
       
-      transition
+      transition!
       duration-300
       ease-in-out;
     @variant hover {
-      @apply text-(--color-highlight)!;
+      @apply text-highlight!;
     }
     @variant dark {
-      @apply text-white! bg-black! border-highlight--dark!;
+      @apply text-white! bg-gray-800! animate-border-pulse--dark!;
       @variant hover {
-        @apply text-(--color-highlight--dark)!;
+        @apply text-highlight--dark!;
       }
     }
   }
@@ -231,6 +246,320 @@
     @apply font-montserrat-alt! text-xs! bg-gray-800! text-main--dark! mr-1 mb-1;
     @variant dark {
       @apply bg-main--dark! text-gray-800!;
+    }
+  }
+
+  .about-container-main {
+    @apply
+      flex
+      flex-col
+      my-3
+      px-3
+      rounded-2xl
+      bg-slate-800/20
+      backdrop-blur-xs;
+  }
+
+  .about-card {
+    @apply
+      flex
+      flex-col
+      gap-4
+      justify-center
+      items-center
+      bg-slate-200
+      mt-8
+      p-3
+      rounded-2xl
+      backdrop-blur-2xl
+      whitespace-pre-line
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant dark {
+      @apply bg-slate-700;
+    }
+    @variant lg {
+      @apply flex-row;
+    }
+  }
+
+  .about-card p {
+    @apply text-gray-800 font-medium;
+    @variant dark {
+      @apply text-main--dark;
+    }
+  }
+
+  .about-card__image-container {
+    @apply
+      flex
+      items-end
+      justify-center
+      bg-radial-[at_50%_75%]
+      from-slate-400
+      via-slate-300
+      to-slate-200
+      outline-4
+      outline-double
+      outline-highlight
+      border-4
+      border-double
+      border-highlight
+      rounded-[100%]
+      m-4
+      h-60
+      w-60
+      drop-shadow-xl
+      shadow-xl
+      overflow-hidden
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant dark {
+      @apply
+      from-slate-600
+      via-slate-700
+      to-slate-800
+      outline-highlight--dark
+      border-highlight--dark;
+    }
+    @variant hover {
+      @apply rounded-4xl outline-solid;
+    }
+    @variant sm {
+      @apply outline-5 border-5 h-65 w-65;
+    }
+    @variant md {
+      @apply h-70 w-70;
+    }
+    @variant lg {
+      @apply outline-7 border-7 h-75 w-75;
+    }
+    @variant xl {
+      @apply h-80 w-80;
+    }
+  }
+
+  .about-card__image {
+    @apply h-55 w-35;
+    @variant sm {
+      @apply h-60 w-38;
+    }
+    @variant md {
+      @apply h-65 w-42;
+    }
+    @variant lg {
+      @apply h-70 w-46;
+    }
+    @variant xl {
+      @apply h-75 w-50;
+    }
+  }
+
+  .skills-card {
+    @apply
+      flex
+      flex-col
+      justify-start
+      items-start
+      bg-slate-200
+      p-3
+      rounded-2xl
+      backdrop-blur-2xl
+      whitespace-pre-line
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant dark {
+      @apply bg-slate-700;
+    }
+  }
+
+  .skills-card h6 {
+    @apply text-gray-800;
+    @variant dark {
+      @apply text-main--dark;
+    }
+  }
+
+  .skills-card__icon {
+    @apply
+      bg-highlight
+      text-2xl
+      text-slate-800
+      my-3
+      p-3
+      rounded-full
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant hover {
+      @apply
+        bg-slate-800  
+        text-highlight;
+    }
+    @variant dark {
+      @apply
+        bg-highlight--dark;
+      @variant hover {
+        @apply
+          bg-slate-800  
+          text-highlight--dark;
+      }
+    }
+  }
+
+  .skills-card__techstacks {
+    @apply
+      bg-highlight!
+      font-montserrat-alt!
+      text-sm!
+      font-semibold
+      text-slate-800
+      px-1!
+      py-3.5!
+      cursor-default!
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant hover {
+      @apply
+        bg-slate-800! 
+        text-highlight!;
+    }
+    @variant dark {
+      @apply
+        bg-highlight--dark!;
+      @variant hover {
+        @apply
+          bg-slate-800! 
+          text-highlight--dark!;
+      }
+    }
+  }
+
+  .skills-card__techstacks:hover .skills-card__techstacks-icon {
+    @apply text-highlight!;
+    @variant dark {
+      @apply text-highlight--dark!;
+    }
+  }
+
+  .skills-card__techstacks-icon {
+    @apply text-slate-800!;
+  }
+
+  .contact {
+    @apply 
+      bg-(image:--bg-contact)
+      bg-cover
+      bg-left
+      bg-no-repeat
+      bg-local
+      flex
+      flex-col
+      h-full
+      justify-center;
+  }
+
+  .contact-card {
+    @apply
+      flex
+      flex-col
+      flex-auto
+      justify-center
+      items-center
+      bg-slate-200/85 backdrop-blur-sm
+      m-2
+      rounded-md
+      border-3
+      animate-border-pulse
+      
+      transition-all
+      duration-300
+      ease-in-out;
+    @variant dark {
+      @apply bg-slate-700/85 animate-border-pulse--dark;
+    }
+  }
+
+  .contact-card h6 {
+    @apply
+      text-gray-800
+      border-b-2
+      border-highlight
+      rounded-b-[80%]
+      p-4;
+    @variant dark {
+      @apply text-main--dark border-highlight--dark;
+    }
+  }
+
+  .contact-form {
+    @apply flex flex-col gap-5 justify-center items-center my-5;
+  }
+
+  .contact-form__section {
+    @apply flex-auto w-60 transition-all duration-300 ease-in-out;
+    @variant sm {
+      @apply w-90;
+    }
+    @variant md {
+      @apply w-100;
+    }
+    @variant lg {
+      @apply w-120;
+    }
+  }
+
+  .contact-form__section input, .contact-form__section textarea {
+    @apply font-viga! text-base! text-slate-800!;
+    @variant dark {
+      @apply text-main--dark!;
+    }
+  }
+
+  .contact-form__section .MuiInput-underline:after {
+    @apply border-slate-800!;
+    @variant dark {
+      @apply border-slate-200!;
+    }
+  }
+  .contact-form__section .MuiOutlinedInput-root fieldset {
+    @apply border-slate-800!;
+    @variant dark {
+      @apply border-slate-200!;
+    }
+  }
+  .contact-form__section .MuiOutlinedInput-root:hover fieldset {
+    @apply border-cyan-500!;
+    @variant dark {
+      @apply border-highlight--dark!;
+    }
+  }
+  .contact-form__section .MuiOutlinedInput-root.Mui-focused fieldset {
+    @apply border-cyan-500!;
+    @variant dark {
+      @apply border-highlight--dark!;
+    }
+  }
+
+  .contact-form__section .MuiInputLabel-formControl {
+    @apply font-viga! text-base! text-slate-600!;
+    @variant dark {
+      @apply text-slate-300!;
+    }
+  }
+  .contact-form__section .MuiInputLabel-formControl.Mui-focused {
+    @apply font-viga! text-base! text-cyan-500!;
+    @variant dark {
+      @apply text-highlight--dark!;
     }
   }
 }

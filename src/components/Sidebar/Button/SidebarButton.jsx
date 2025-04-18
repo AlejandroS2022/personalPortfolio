@@ -3,12 +3,12 @@ import CustomTooltip from "../../Tooltip/Tooltip"
 function SidebarButton({
   href,
   tooltip,
-  icon: Icon,
+  Icon,
 }) {
   return (
     <>
       <CustomTooltip title={tooltip} placement="left" arrow="true">
-        <a href={href} target="_blank" className="sidebar-button">
+        <a href={href} className="sidebar-button">
           <Icon className="
             text-base!
             md:text-lg!

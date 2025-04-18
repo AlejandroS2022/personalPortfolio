@@ -1,6 +1,6 @@
 function SocialsButton({
   href,
-  icon: Icon,
+  Icon,
 }) {
   return (
     <>
