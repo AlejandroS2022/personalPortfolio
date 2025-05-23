@@ -26,8 +26,14 @@
   --color-highlight--dark: #FED552;
 
   /* backgrounds */
-  --bg-hero: url(../images/hero-bg-light.png);
-  --bg-hero--dark: url(../images/hero-bg-dark.png);
+  --bg-hero: url(../images/hero-bg-light_ed.jpg);
+  --bg-hero--rock-left: url(../images/hero-bg-light_el1.png);
+  --bg-hero--rock-right: url(../images/hero-bg-light_el2.png);
+
+  --bg-hero--dark: url(../images/hero-bg-dark_ed.jpg);
+  --bg-hero--dark--rock-left: url(../images/hero-bg-dark_el1.png);
+  --bg-hero--dark--rock-right: url(../images/hero-bg-dark_el2.png);
+  
   --bg-contact: url(../images/contact-bg.png);
 
   /* effects */
@@ -35,6 +41,8 @@
   --drop-shadow-p: 0 2px 2px rgba(0, 0, 0, 0.4);
 
   /* animations */
+  --animate-rock-left: rock-left-anim 10s linear infinite;
+  --animate-rock-right: rock-right-anim 13s linear infinite;
   --animate-border-pulse: border-pulse 3s ease-in-out infinite;
   --animate-border-pulse--dark: border-pulse--dark 3s ease-in-out infinite;
   --animate-card: border-pulse 3s ease-in-out infinite, fade-hero 1s ease-in-out;
@@ -48,6 +56,44 @@
 
 @layer utilities {
   /* keyframes */
+  @keyframes rock-left-anim {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(7px);
+    }
+    23%, 27% {
+      transform: translateY(8px);
+    }
+    70% {
+      transform: translateY(-7px);
+    }
+    73%, 77% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes rock-right-anim {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(9px);
+    }
+    23%, 27% {
+      transform: translateY(10px);
+    }
+    70% {
+      transform: translateY(-9px);
+    }
+    73%, 77% {
+      transform: translateY(-10px);
+    }
+  }
+
   @keyframes border-pulse {
     0%,
     100% {

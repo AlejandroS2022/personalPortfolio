@@ -26,7 +26,7 @@ function Contact() {
     <>
       <div className="contact" id="contact">
 
-        <div className="main-app rounded-b-[100%] shadow-2xl">
+        <div className="flex">
           <h2 className="drop-shadow-h mx-auto my-5">
             Contact Me
           </h2>

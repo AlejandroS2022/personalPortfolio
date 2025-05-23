@@ -27,6 +27,10 @@ function App() {
       { loading && <LoadingScreen /> }
       <Navbar />
       <Sidebar />
+
+      <div className="rock rock--left" />
+      <div className="rock rock--right" />
+
       <div className="main-app">
         <Hero />
         <Projects />
